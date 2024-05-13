@@ -19,7 +19,7 @@ public class DepartmentService {
 
 	private final DepartmentRepository departmentRepository;
 
-	@CacheEvict(cacheNames = "departments", key = "#departmentId")
+	@CacheEvict(cacheNames = "departments", allEntries = true)
 	public Department create(Department department) {
 		return departmentRepository.save(department);
 	}
